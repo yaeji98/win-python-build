@@ -1,0 +1,17 @@
+name: win-python-build-workflows
+on:
+  pull_request:
+    types: [opened, reopened]
+jobs:
+  workflows-test:
+    runs-on: win-python-build
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      
+    - name: show env-variable
+      run : $env:path
+      
+defaults:
+  run:
+    shell: powershell
