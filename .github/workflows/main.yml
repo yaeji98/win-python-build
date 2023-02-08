@@ -19,7 +19,6 @@ jobs:
         architecture: 'x64'
       env:
         AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
-        RUNNER_TOOL_CACHE: /opt/hostedtoolcache
     
 defaults:
   run:
