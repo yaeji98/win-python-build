@@ -18,8 +18,8 @@ jobs:
         python-version: '3.10'
         architecture: 'x64'
       env:
-        AGENT_TOOLSDIRECTORY: C:\Users\MDS\anaconda3\Scripts
-        RUNNER_TOOL_CACHE: C:\Users\MDS\anaconda3\Scripts
+        AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+        RUNNER_TOOL_CACHE: /opt/hostedtoolcache
     
 defaults:
   run:
