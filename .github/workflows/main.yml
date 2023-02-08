@@ -12,6 +12,10 @@ jobs:
     - name: show env-variable
       run : $env:path
       
+    
+    - name: print python version
+      run : echo ${matrix.python-version}
+      
     - name: Set up Python 3.10
       uses : actions/setup-python@v4
       with:
