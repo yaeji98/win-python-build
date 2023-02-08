@@ -12,6 +12,15 @@ jobs:
     - name: show env-variable
       run : $env:path
       
+    - name: Set up Python 3.10
+      uses : actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        architecture: 'x86' 
+      env:
+        AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+        RUNNER_TOOL_CACHE: /opt/hostedtoolcache
+      
 defaults:
   run:
     shell: powershell
