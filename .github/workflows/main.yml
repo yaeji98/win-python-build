@@ -21,3 +21,6 @@ jobs:
         AGENT_TOOLSDIRECTORY: C:\Users\MDS\anaconda3\Scripts
         RUNNER_TOOL_CACHE: C:\Users\MDS\anaconda3\Scripts
     
+defaults:
+  run:
+    shell: powershell
