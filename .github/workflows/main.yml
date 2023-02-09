@@ -6,17 +6,21 @@ jobs:
   workflows-test:
     runs-on: Windows
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - shell: pwsh
+        run: |
+          "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
+          
+      - name: Checkout repository
+        uses: actions/checkout@v3
       
-    - name: show env-variable
-      run : echo ${env:PATH}
-      shell: pwsh
+      - name: show env-variable
+        run : echo ${env:PATH}
+        shell: pwsh
       
-    - name: Set up Python 3.10
-      uses : actions/setup-python@v4
-      with:
-        python-version: '3.10'
-        architecture: 'x64'
-      env:
-        AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+      - name: Set up Python 3.10
+        uses : actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+        env:
+          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
