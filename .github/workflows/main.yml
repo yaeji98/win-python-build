@@ -22,6 +22,7 @@ jobs:
         with:
           python-version: '3.10'
           architecture: 'x64'
+          shell: pwsh
         env:
           AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache        
-          shell: pwsh
+          
