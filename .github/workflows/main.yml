@@ -22,4 +22,4 @@ jobs:
     
 defaults:
   run:
-    shell: powershell
+    shell: pswh
