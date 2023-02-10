@@ -6,13 +6,13 @@ jobs:
   workflows-test:
     runs-on: self-hosted
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
       - shell: pwsh
         run: |
           "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
           $ErrorView = "NormalView"
-          
-      - name: Checkout repository
-        uses: actions/checkout@v3
       
       - name: print github env
         run : echo ${core.addPath}
