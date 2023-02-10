@@ -12,19 +12,13 @@ jobs:
           
       - name: Checkout repository
         uses: actions/checkout@v3
-        
-      - name: Set up Python 3.10
-        uses : actions/setup-python@v4
-        with:
-          python-version: '3.10'
-          architecture: 'x64'
-        env:
-          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
-          RUNNER_TOOL_CACHE: C:\Program Files\PowerShell\7
-          shell: pwsh -command ". '{0}'"
       
       - name: print github env
         run : echo ${core.addPath}
+        
+      - name: run python
+        run : python --version
+        shell: python
         
 defaults:
   run:
