@@ -12,13 +12,19 @@ jobs:
           
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: show env-variable
-        run : echo ${env:PATH}
-        shell: pwsh -command ". '{0}'"
+        
+      - name: Set up Python 3.10
+        uses : actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
+        env:
+          AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+          shell: pwsh -command ". '{0}'"
       
       - name: print github env
         run : Write-Output "::core.isDebug"
+        
 defaults:
   run:
     shell: pwsh
