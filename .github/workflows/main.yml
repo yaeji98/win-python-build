@@ -24,7 +24,7 @@ jobs:
           shell: pwsh -command ". '{0}'"
       
       - name: print github env
-        run : Write-Output "::core.isDebug"
+        run : echo ${core.addPath}
         
 defaults:
   run:
