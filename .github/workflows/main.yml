@@ -15,7 +15,7 @@ jobs:
       
       - name: show env-variable
         run : echo ${env:PATH}
-        shell: pwsh
+        shell: pwsh -command ". '{0}'"
       
       - name: print github env
         run : Write-Output "::core.isDebug"
