@@ -12,8 +12,6 @@ jobs:
       - shell: pwsh
         run: |
           "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
-          $ErrorView = "NormalView"
-          echo $env:GITHUB_PATH
       
       - name: print github env
         run : echo ${core.addPath}
@@ -26,7 +24,9 @@ jobs:
         env:
           AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
           RUNNER_TOOL_CACHE: /opt/hostedtoolcache
-          shell: pwsh -command ". '{0}'"
+          shell: powershell
+          run: |
+            "C:\WINDOWS\System32\WindowsPowerShell\v1.0\" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
         
 defaults:
   run:
