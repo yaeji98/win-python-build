@@ -4,7 +4,7 @@ on:
     types: [opened, reopened]
 jobs:
   workflows-test:
-    runs-on: Windows
+    runs-on: self-hosted
     steps:
       - shell: pwsh
         run: |
