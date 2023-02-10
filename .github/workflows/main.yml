@@ -9,6 +9,7 @@ jobs:
       - shell: pwsh
         run: |
           "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
+          $ErrorView = "NormalView"
           
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -16,11 +17,15 @@ jobs:
       - name: print github env
         run : echo ${core.addPath}
         
-      - name: run python
-        run : bash -c "$RUNNER_TOOL_CACHE/Python/3.8.0/x64/python {0}" --version
-        shell: python
+      - name: Set up Python 3.10
+        uses : actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          architecture: 'x64'
         env:
           AGENT_TOOLSDIRECTORY: /opt/hostedtoolcache
+          RUNNER_TOOL_CACHE: /opt/hostedtoolcache
+          shell: pwsh -command ". '{0}'"
         
 defaults:
   run:
