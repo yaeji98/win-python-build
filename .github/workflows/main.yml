@@ -24,7 +24,7 @@ jobs:
         env:
           shell: powershell
           run: |
-            "C:\WINDOWS\System32\WindowsPowerShell\v1.0\" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+            "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
         
 defaults:
   run:
