@@ -13,6 +13,7 @@ jobs:
         run: |
           "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
           $ErrorView = "NormalView"
+          echo $env:GITHUB_PATH
       
       - name: print github env
         run : echo ${core.addPath}
