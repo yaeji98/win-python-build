@@ -7,8 +7,22 @@ jobs:
   workflows-test:
     runs-on: self-hosted
     steps:   
-      - name: print path
+      - name: print path1
         run: Write-Output "::dfjdfd${core.exportVariable}"
+        
+      - name: print path2
+        run: Write-Output "::${GITHUB_PATH}"
+        
+        
+      - name: print path3
+        run: Write-Output "::${core.addPath}"
+        
+        
+      - name: print path4
+        run: Write-Output "::${GITHUB_ENV}"
+        
+      - name: print path5
+        run: Write-Output "::${INPUT_{HELLO}}"
            
 defaults:
   run:
