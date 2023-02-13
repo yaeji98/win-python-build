@@ -2,16 +2,18 @@ name: win-python-build-workflows
 on:
   pull_request:
     types: [opened, reopened]
+env:
+  PYTHON_VERSION: 3.8
 jobs:
   workflows-test:
     runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-      
-      - name: print github env
-        run : Write-Output "::workflow-command ${github.action_path}"
         
+      - with:
+          python-version: ${{env.PYTHON_VERSION}}
+          
 defaults:
   run:
     shell: pwsh
