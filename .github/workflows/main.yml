@@ -6,7 +6,7 @@ on:
 permissions: write-all
 
 env:
-  PYTHON_VERSION: 3.8
+  PYTHON_VERSION: "3.8"
 jobs:
   workflows-test:
     runs-on: self-hosted
