@@ -2,29 +2,14 @@ name: win-python-build-workflows
 on:
   pull_request:
     types: [opened, reopened]
-    
-permissions: write-all
-
-env:
-  PYTHON_VERSION: "3.8"
-  
+   
 jobs:
   workflows-test:
     runs-on: self-hosted
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        
+    steps:   
       - name: print path
         uses: Write-Output "::dfjdfd${core.exportVariable}"
-        
-      - name: setup - python   
-        uses: actions/setup-python@v3
-        with:
-          cache: pip
-          python-version: ${{env.PYTHON_VERSION}}
-    
-          
+           
 defaults:
   run:
     shell: pwsh
