@@ -6,9 +6,13 @@ on:
 jobs:
   workflows-test:
     runs-on: self-hosted
-    steps:   
+    steps:
+      - name: setting variable
+        run: | 
+            "C:\Program Files\PowerShell\7" >> $env:GITHUB_PATH
+        
       - name: print path1
-        run: Write-Output "::dfjdfd${core.exportVariable}"
+        run: Write-Output "::{core.exportVariable}"
         
       - name: print path2
         run: Write-Output "::${GITHUB_PATH}"
