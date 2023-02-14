@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: setting variable
         run: | 
-            "yeji = C:\Program Files\PowerShell\7" >> $GITHUB_PATH
+            "yeji = C:\Program Files\PowerShell\7\" >> $GITHUB_PATH
     outputs:
       outputPath: ${{ steps.outputs.yeji}}
 defaults:
